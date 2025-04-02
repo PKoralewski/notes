@@ -12,6 +12,9 @@ services:
       MYSQL_PASSWORD: demo
     ports:
       - 3306:3306
+    volumes:
+      - ./database/dump.sql:/docker-entrypoint-initdb.d/dump.sql
+      - db_data:/var/lib/mysql
 
   phpmyadmin:
     image: phpmyadmin:5.2.2
@@ -21,3 +24,7 @@ services:
     environment:
       - PMA_HOST=mysql
       - PMA_ARBITRARY=0
+
+volumes:
+  db_data:
+      
