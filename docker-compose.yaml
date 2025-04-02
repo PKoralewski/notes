@@ -1,0 +1,23 @@
+version: '3.1'
+
+services:
+
+  mysql:
+    image: mysql:9.2.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: myapp
+      MYSQL_USER: demo
+      MYSQL_PASSWORD: demo
+    ports:
+      - 3306:3306
+
+  phpmyadmin:
+    image: phpmyadmin:5.2.2
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_HOST=mysql
+      - PMA_ARBITRARY=0
