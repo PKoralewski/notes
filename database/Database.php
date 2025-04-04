@@ -23,7 +23,7 @@ class Database {
 
     public function get()
     {
-        return this->statement->fetchAll();
+        return $this->statement->fetchAll();
     }
 
     public function find()
