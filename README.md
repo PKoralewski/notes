@@ -28,7 +28,7 @@ Aby uruchomić projekt, musisz mieć zainstalowanego Dockera na swoim systemie.
    Użyj poniższych komend, aby uruchomić projekt za pomocą Docker Compose:
    
    ```bash
-   docker-compose up --build
+   docker-compose up --build -d
    ```
 
    Komenda ta zbuduje obrazy Docker i uruchomi kontenery zgodnie z konfiguracją w pliku `docker-compose.yaml`.
