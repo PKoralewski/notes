@@ -2,6 +2,7 @@
 
 class Database {
     public $connection;
+    public $statement;
 
     public function __construct($config, $username = 'demo', $password = 'demo') 
     {
@@ -17,6 +18,6 @@ class Database {
         $statement = $this->connection->prepare($query);
         $statement->execute($params);
         
-        return $statement;
+        return $this;
     }
 }
