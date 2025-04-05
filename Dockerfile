@@ -12,8 +12,10 @@ RUN apt-get update && apt-get install -y \
 
 RUN a2enmod rewrite
 
-WORKDIR /var/www/html
+RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html/public|g' /etc/apache2/sites-available/000-default.conf \
+ && sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/c\\<Directory /var/www/html/public>\n\tAllowOverride All\n\tRequire all granted\n</Directory>' /etc/apache2/apache2.conf
 
+WORKDIR /var/www/html
 COPY . .
 
 RUN chown -R www-data:www-data /var/www/html
