@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: Apr 02, 2025 at 02:24 PM
+-- Generation Time: Apr 07, 2025 at 02:52 PM
 -- Wersja serwera: 9.2.0
 -- Wersja PHP: 8.2.28
 
@@ -38,29 +38,7 @@ CREATE TABLE `notes` (
 --
 
 INSERT INTO `notes` (`id`, `body`, `user_id`) VALUES
-(1, 'Work reminders...', 1),
-(2, 'Ideas for next vacation...', 1),
-(3, 'Thoughts on my continued learning of PHP', 2);
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `users`
---
-
-CREATE TABLE `users` (
-  `id` int NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Zrzut danych tabeli `users`
---
-
-INSERT INTO `users` (`id`, `name`, `email`) VALUES
-(1, 'John Doe', 'johndoe@email.com'),
-(2, 'Bruno Alisson', 'brunoalisson@email.com');
+(1, 'Work reminders...', 1);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -74,13 +52,6 @@ ALTER TABLE `notes`
   ADD KEY `user_id` (`user_id`);
 
 --
--- Indeksy dla tabeli `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
-
---
 -- AUTO_INCREMENT dla zrzuconych tabel
 --
 
@@ -88,13 +59,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT dla tabeli `notes`
 --
 ALTER TABLE `notes`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT dla tabeli `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Ograniczenia dla zrzutów tabel
