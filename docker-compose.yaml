@@ -9,7 +9,6 @@ services:
       - .:/var/www/html
     depends_on:
       - mysql
-    command: sh -c "composer install && apache2-foreground"
 
   mysql:
     image: mysql:9.2.0
