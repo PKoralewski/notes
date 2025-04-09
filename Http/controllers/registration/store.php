@@ -29,12 +29,8 @@ $user = $db->query('select * from users where email=:email', [
     'email' => $email,
 ])->find();
 
-if($user) {
-
-    header('location: /');
-    exit();
-
-} else {
+if($user) redirect('/');
+else {
 
     $db->query('INSERT INTO users(email, password) VALUES(:email, :password)', [
         'email' => $email,
@@ -45,7 +41,6 @@ if($user) {
         'email' => $email
     ];
 
-    header('location: /');
-    exit();
+    redirect('/');
 }
 
