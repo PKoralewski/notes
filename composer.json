@@ -1,0 +1,10 @@
+{
+    "name": "pkora/notes",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+        }
+    }
+}
