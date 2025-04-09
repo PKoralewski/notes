@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: Apr 07, 2025 at 02:52 PM
+-- Generation Time: Apr 09, 2025 at 01:19 PM
 -- Wersja serwera: 9.2.0
 -- Wersja PHP: 8.2.28
 
@@ -24,52 +24,35 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `notes`
+-- Struktura tabeli dla tabeli `users`
 --
 
-CREATE TABLE `notes` (
+CREATE TABLE `users` (
   `id` int NOT NULL,
-  `body` text NOT NULL,
-  `user_id` int NOT NULL
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Zrzut danych tabeli `notes`
---
-
-INSERT INTO `notes` (`id`, `body`, `user_id`) VALUES
-(1, 'Work reminders...', 1);
 
 --
 -- Indeksy dla zrzutów tabel
 --
 
 --
--- Indeksy dla tabeli `notes`
+-- Indeksy dla tabeli `users`
 --
-ALTER TABLE `notes`
+ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT dla zrzuconych tabel
 --
 
 --
--- AUTO_INCREMENT dla tabeli `notes`
+-- AUTO_INCREMENT dla tabeli `users`
 --
-ALTER TABLE `notes`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- Ograniczenia dla zrzutów tabel
---
-
---
--- Ograniczenia dla tabeli `notes`
---
-ALTER TABLE `notes`
-  ADD CONSTRAINT `notes_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+ALTER TABLE `users`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
