@@ -33,9 +33,16 @@ notes/
 - `public/`: Katalog dostępny publicznie, zawierający pliki, które są bezpośrednio dostępne dla użytkownika.
 - `tests/`: Zawiera testy aplikacji.
 - `views/`: Zawiera pliki widoków aplikacji.
+- `Dockerfile`: Instrukcje do stworzenia obrazu Docker.
+- `bootstrap.php`: Inicjalizacja aplikacji.
+- `config.php`: Ustawienia konfiguracyjne aplikacji.
+- `docker-compose.yaml`: Konfiguracja kontenerów Docker.
+- `phpunit.xml`: Konfiguracja PHPUnit dla testów.
+- `routes.php`: Definicja tras i routing aplikacji.
 
 ## Wymagania
 
+- **PHP 8.2+** do zainstalowania zależności PHP, w tym PHP Pest. Możesz pobrać PHP z [oficjalnej strony PHP](https://www.php.net/downloads.php).
 - [Composer](https://getcomposer.org/) do zarządzania zależnościami PHP.
 - [Docker](https://www.docker.com/) do uruchomienia aplikacji w kontenerze.
 
@@ -50,7 +57,7 @@ notes/
 
 2. **Instalacja zależności:**
 
-   Upewnij się, że masz zainstalowanego Composera. Następnie uruchom:
+   Upewnij się, że masz zainstalowanego Composera oraz PHP 8.2 lub wyższego. Następnie uruchom:
 
    ```bash
    composer install
@@ -68,6 +75,7 @@ notes/
 
 ## Technologie
 
+- **Docker**: Używany do uruchomienia aplikacji w kontenerze.
 - **Tailwind CSS**: Użyty do stylizacji aplikacji.
 - **Tailwind UI**: Wykorzystano komponenty do szybszego tworzenia interfejsu użytkownika.
 - **PestPHP**: Zainstalowany w celu ułatwienia pisania testów.
