@@ -1,5 +1,7 @@
 FROM php:8.2-apache
 
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
 RUN apt-get update && apt-get install -y \
     libpng-dev \
     libjpeg-dev \
@@ -16,6 +18,7 @@ RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html/public|g' /e
  && sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/c\\<Directory /var/www/html/public>\n\tAllowOverride All\n\tRequire all granted\n</Directory>' /etc/apache2/apache2.conf
 
 WORKDIR /var/www/html
+
 COPY . .
 
 RUN chown -R www-data:www-data /var/www/html
